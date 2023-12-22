@@ -1,10 +1,12 @@
 # RegEX tutorial
 
-Introductory paragraph (replace this with your text)
+Hello, my name is Arthur. I'm an aspiring CS student at UTSA and to deepen my understanding I will like to provide a tutorial on RegEX.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+By the end of the RegEX tutorial you'll be able to dissect the following RegEX expression:
+
+- `^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$`
 
 ## Table of Contents
 
@@ -16,12 +18,11 @@ Briefly summarize the regex you will be describing and what you will explain. In
 - [The OR Operator](#the-or-operator)
 - [Flags](#flags)
 - [Character Escapes](#character-escapes)
+- [Conclusion](#conclusion)
 
 ## Regex Components
 
-- Regex components are characters when comprised in a seqeuence, will define a search pattern. Certain characters enable certain abilities and these abilties are what we refer to as components. We'll start by dissecting the following REGEX Expression.
-
-- `^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$`
+- Regex components are characters when comprised in a seqeuence, will define a search pattern. Certain characters enable certain abilities and these abilties are what we refer to as components.
 
 ### Anchors
 
@@ -37,7 +38,7 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 - Quantifiers are characters that allow you to specify the number of instances of a character/group appear.
 
-- 1. '\*' : Referred to as an Asterisk. Which ensures a preceding character/group 0 or more times.
+- 1. '*' : Referred to as an Asterisk. Which ensures a preceding character/group 0 or more times.
 
 - 2. '+' : Referred to as a Plus sign. Which ensures a preceding character/group 1 or more times.
 
@@ -45,23 +46,17 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 - 4. {} : Referred to as Curly Braces. Used to specify either a exact number or a range of numbers for a preceding character/group to appear.
 
-- You'll find these characters at within the example and their function allows...
-
 ### Grouping Constructs
 
 - Grouping Constructs are characters that create a subpattern(s) within an expression.
 
 - 1. () : Referred to as Parentheses. These characters capture a group within the Parentheses.
 
-- You'll find these characters at within the example and their function allows...
-
 ### Bracket Expressions
 
 - Bracket Expressions are characters that define a set of characters. Ensuring that any character in the input string must match.
 
 - 1. [] : known as Square Brackets. These characters ensure that any character within the square brackets are a character for which the input string must match.
-
-- You'll find these characters at within the example and their function allows...
 
 ### Character Classes
 
@@ -75,15 +70,11 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 - 4. \s : Referred to as Whitespace. This matches any whitespace character such as tabs, newlines, spaces, etc.
 
-- You'll find these characters at within the example and their function allows...
-
 ### The OR Operator
 
 - The OR operator is used to specify and alternative(s).
 
 - 1. | : Character for the OR operator.
-
-- You'll find these characters at within the example and their function allows...
 
 ### Flags
 
@@ -93,14 +84,36 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 - 2. i : Referred to as Case Insensitive. Alters the regex engine to match letters in a case insensitive method.
 
-- You'll find these characters at within the example and their function allows...
-
 ### Character Escapes
 
 - Character Escapes are a character that give other characters literal meaning. The character used for character escape(s) is below:
 
 - 1. \ : Referred to as Backslash.
 
+### Conclusion
+
+Now that we have explained regex components. Lets put that knowledge together by dissecting the following regex expression:
+
+- `^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$`
+
+- 1. `^`: Starting from the beginning we have the Caret(^) character thats asserting a position.
+
+- 2. `(https?:\/\/)?`: We have captured a group of the protocol (https) where we have a quantifier which states that the 's' in https is optional. Also, ending the captured group with a quantifier. We're stating the including the entire protocol is optional.
+
+- 3. `([\da-z\.-]+)`: This is another captured group which gives the constraints that are allowed for the domain part of the URL which is (a-z), digits, dots, and hyphens are allowed within the domain name.
+
+- 4. `\.([a-z\.]{2,6})`: This is also constraints for the domain passed the '.'. we have a length constaint stating that there should be a minimum of 2 characters and a maximum of 6 characters after the '.'.
+
+- 5. `([\/\w \.-]*)`: A captured group for the path of the URL, ensuring that we're able to have 0 or more of the following characters: /, word characters, spaces, dots, or hyphens.
+
+- 6. `*`: A quantifier indicating that the aforementioned captured group can appear 0 or more times.
+
+- 7. `\/?`: We have a quantifier that makes a trailing slash OPTIONAL.
+
+- 8. `$`: We end it off with a ending Anchor character.
+
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Created by:
+
+Arthur Bridges (https://github.com/Arthur-Bridges)
