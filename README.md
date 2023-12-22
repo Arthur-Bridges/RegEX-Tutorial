@@ -92,13 +92,13 @@ By the end of the RegEX tutorial you'll be able to dissect the following RegEX e
 
 ### Conclusion
 
-Now that we have explained regex components. Lets put that knowledge together by dissecting the following regex expression:
+Now that we have learned regex components. Lets put that knowledge together by dissecting the following regex expression:
 
 - `^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$`
 
 - 1. `^`: Starting from the beginning we have the Caret(^) character thats asserting a position.
 
-- 2. `(https?:\/\/)?`: We have captured a group of the protocol (https) where we have a quantifier which states that the 's' in https is optional. Also, ending the captured group with a quantifier. We're stating the including the entire protocol is optional.
+- 2. `(https?:\/\/)?`: We have a captured a group of the protocol (https) where we have a quantifier which states that the 's' in https is optional. Also, ending the captured group with a quantifier. We're stating the including the entire protocol is optional.
 
 - 3. `([\da-z\.-]+)`: This is another captured group which gives the constraints that are allowed for the domain part of the URL which is (a-z), digits, dots, and hyphens are allowed within the domain name.
 
